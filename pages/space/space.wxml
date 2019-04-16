@@ -1,0 +1,29 @@
+<import src="../public/public.wxml"/>
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="nav-bg cf" wx:if="{{author}}">
+    <view class="user-info">
+        <image  src="{{author.face}}"  background-size="cover" class="i-face"/>
+        <span class="i-name" >{{author.uname}}</span>
+        <image  wx:for="{{author.usericon}}"  wx:key="usericon" class="user-group" wx:if="{{item}}" src="{{item}}"  background-size="cover" />
+    </view>
+    <view class="user-tab">
+        <div class="t-tab"><span class="s1">{{author.viewpoint_num}}</span><span class="s2">动态</span></div>
+    </view>
+</view>
+
+
+<scroll-view scroll-y="true" bindscrolltolower="getListInfo" class="newmgzq" style="height:{{scrollHeight}}px;">
+    <navigator url="/pages/weiboDetail/weiboDetail?weiboId={{dynamic2[index].weibo_id}}&state={{!dynamic2[index].viewpoint?'weibo':'viewpoint'}}" class="new-mg-block" wx:for="{{dynamic}}" wx:for-item="item" wx:key="" wx:if="{{item[0]}}">
+        <view class="n-content">
+          <view class="c-content line-clamp5">
+            <template is="wxParse" data="{{wxParseData:item}}"/>
+          </view>
+          <view class="c-bottom-bg">
+              {{dynamic2[index].format_ctime}}
+          </view>
+    
+        </view>
+    </navigator>
+    <!-- <view class="loading" wx:if="{{listState==2}}"></view> -->
+</scroll-view>
+ <template is="navBottom"/>

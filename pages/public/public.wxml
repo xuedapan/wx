@@ -1,0 +1,11 @@
+<template name="navBottom">
+  <view class='nav-height'></view>
+  <view class='nav-bottom-bg'>
+    <navigator class="n-block {{pageUrl!='pages/userInfo/userInfo'?'active':''}}" url="/pages/index/index">
+      直播{{route}}
+    </navigator>
+    <navigator class="n-block {{pageUrl=='pages/userInfo/userInfo'?'active':''}}" url="/pages/userInfo/userInfo">
+      个人中心
+    </navigator>
+  </view>
+</template>

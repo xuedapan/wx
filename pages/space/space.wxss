@@ -1,0 +1,14 @@
+
+.nav-bg{ border-bottom: 1rpx solid #ddd; overflow: hidden;padding-bottom: 20rpx; width: 90%;margin:0 auto;}
+.nav-bg .user-info{position: relative; color: #333; font-size: 28rpx; padding-top: 15rpx;float: left;}
+.nav-bg .user-info .i-face{ border-radius: 50%; width: 80rpx; height: 80rpx; display: inline-block; vertical-align: middle;}
+.nav-bg .user-info .i-name{display: inline-block; vertical-align: middle; margin-left: 20rpx; color: #333;}
+.nav-bg .user-info>.user-group{ position: absolute; left: 58rpx; bottom: 0; width: 30rpx;height: 30rpx;}
+
+.nav-bg .user-tab{ position:relative;float: right; padding-top: 30rpx;}
+.nav-bg .user-tab div{ display: inline-block; vertical-align: middle;}
+.nav-bg .user-tab .t-tab{  font-size:26rpx;}
+.nav-bg .user-tab .t-tab .s1{ color: #3f99d6; display: block; text-align: center; white-space:nowrap; }
+.nav-bg .user-tab .t-tab .s2{ color: #bbbccc; display: block; text-align: center; white-space:nowrap; }
+
+.new-mg-block .n-content{width:100%;}

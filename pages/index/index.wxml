@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+<import src="../public/public.wxml"/>
+<import src="../../wxParse/wxParse.wxml"/>
+<!-- <functional-page-navigator name="loginAndGetUserInfo" bind:success="loginSuccess" version="develop">
+  <button>登录到插件</button>
+</functional-page-navigator> -->
+<scroll-view scroll-y="true" bindscrolltolower="getListInfo" class="newmgzq" style="height:{{scrollHeight}}px;">
+    <navigator url="/pages/space/space?uid={{listInfoData2[index].uid}}" class="new-mg-block" wx:for="{{listInfoData}}" wx:for-item="item" wx:key="" wx:if="{{item[0]}}">
+        <image src="{{listInfoData2[index].face}}" background-size="cover" class="n-face"/>
+        <view class="n-content">
+            <view class="c-top-bg">
+                <view class="c-left" >
+                    <view class="c-name">{{listInfoData2[index].uname}}</view>
+                    <view class="c-label"  wx:for="{{listInfoData2[index].tag_name}}" wx:for-item="i" wx:key="">{{i}}</view>
+                </view>
+            </view>
+            <view class="c-content line-clamp5">
+                <template is="wxParse" data="{{wxParseData:item}}"/>
+              </view>
+            <view class="c-bottom-bg"  wx:if="{{listInfoData2[index].wb_ctime}}">
+               {{listInfoData2[index].wb_ctime}}
+            </view>
+        </view>
+    </navigator>
+    <!-- <view class="loading" wx:if="{{listState==2}}"></view> -->
+</scroll-view>
+
+ <template is="navBottom"/>

@@ -1,0 +1,3 @@
+
+.new-mg-block .n-content{width:100%;}
+.new-mg-block .n-content .c-content{overflow: hidden;text-overflow:inherit;display: -webkit-box;-webkit-line-clamp:auto;-webkit-box-orient: vertical;}

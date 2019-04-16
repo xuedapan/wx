@@ -1,0 +1,25 @@
+<import src="../public/public.wxml"/>
+<import src="../../wxParse/wxParse.wxml"/>
+<!-- <view class="loading" wx:if="{{!weiboDetail}}"></view> -->
+<view class="nav-bg cf" wx:if="{{weiboDetail}}">
+    <view class="user-info">
+        <image  src="{{weiboDetail.face}}"  background-size="cover" class="i-face"/>
+        <span class="i-name" >{{weiboDetail.uname}}</span>
+        <image  wx:for="{{weiboDetail.usericon}}"  wx:key="usericon" class="user-group" wx:if="{{item}}" src="{{item}}"  background-size="cover" />
+    </view>
+</view>
+<view  class="newmgzq" >
+    <view class="new-mg-block">
+        <view class="n-title">{{weiboDetail.title}}</view>
+        <view class="n-content">
+          <view class="c-content">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+          </view>
+          <view class="c-bottom-bg">
+              {{time}}
+          </view>
+    
+        </view>
+    </view>
+</view>
+ <template is="navBottom"/>

@@ -1,0 +1,5 @@
+
+.nav-height{height: 90rpx;}
+.nav-bottom-bg{ position: fixed;left: 0;bottom: 0;width: 100%; background: #fff; box-shadow:  0 0 8px #ccc;}
+.nav-bottom-bg .n-block{width: 50%; float: left;text-align: center;font-size: 28rpx;height: 90rpx;line-height: 87rpx;}
+.nav-bottom-bg .n-block.active{color: #1AAD19;}

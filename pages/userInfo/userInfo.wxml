@@ -1,0 +1,47 @@
+<!-- <open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data> -->
+<!-- 需要使用 button 来授权登录 -->
+<!-- <button wx:if="{{canIUse&&!userInfoData}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+<view wx:elif="{{!canIUse}}">请升级微信版本</view>
+<view wx:if="{{canIUse&&userInfoData}}">
+    <cover-image class="img" src="{{userInfoData.avatarUrl}}" />
+</view> -->
+<import src="../public/public.wxml"/>
+<block wx:if='{{loadState}}' >
+<view class="getUserInfo-bg"  wx:if='{{!userInfoData&&canIUse}}'>
+  <view class='i-bg'></view>
+  <view class='i-pop-bg'>
+    <view class='p-title'>请授权登录，体验更多功能</view>
+    <button class='p-btn' type='primary' open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>授权登录</button>
+  </view>
+</view>
+<view wx:elif="{{!canIUse}}">请升级微信版本</view>
+
+<view class='userInfo-bg' wx:if='{{!showUserFormState&&userInfoData}}'>    
+   <cover-image class="i-face" src="{{userInfoData.avatarUrl}}" bindtap='chooseFace'/>
+   <view class='i-text'>{{userInfoData.nickName}}</view>
+   <!-- <view class='i-text'>{{userInfoData.gender}}</view> -->
+   <!-- <view class='i-text'>
+    {{userInfoData.country}}-{{userInfoData.province}}-{{userInfoData.city}}
+    <open-data type="userCountry" lang="zh_CN"></open-data>-
+    <open-data type="userProvince" lang="zh_CN"></open-data>-
+    <open-data type="userCity" lang="zh_CN"></open-data>
+   </view> -->
+   <button class='i-btn' type='primary' bindtap='showUserForm'>修改用户信息</button>
+   <!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号码</button> -->
+   <!-- <button class='i-btn' open-type='share' >分享</button> -->
+</view> 
+
+<form wx:if='{{showUserFormState}}' class='userForm' bindsubmit="formSubmit" bindreset="formReset">
+  <view class='f-block'>
+    <!-- <view class='f_title'>昵称</view> -->
+    <!-- <cover-image class="f-face" src="{{userInfoData.avatarUrl}}" bindtap='chooseFace'/> -->
+    <input class='f_input' name="nickName" value="{{userInfoData.nickName}}" placeholder="请输入昵称" />
+  </view>
+  <view class='btn-bg clearfix'>
+    <button class='btn fl' type='primary' form-type='submit'>修改</button>
+    <button class='btn fr' bindtap='closeUserForm'>取消</button>
+  </view>
+</form>
+</block>
+ <template is="navBottom" data="{{pageUrl}}"/>

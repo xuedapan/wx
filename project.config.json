@@ -1,0 +1,57 @@
+{
+	"description": "项目配置文件。",
+	"cloudfunctionRoot": "functions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.3",
+	"appid": "wxa8b380322720309e",
+	"projectname": "wxxcx",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": 0,
+					"name": "space",
+					"pathName": "pages/space/space",
+					"query": "uid=276065"
+				},
+				{
+					"id": -1,
+					"name": "weiboDetail",
+					"pathName": "pages/weiboDetail/weiboDetail",
+					"query": "weiboId=276065"
+				},
+				{
+					"id": -1,
+					"name": "userInfo",
+					"pathName": "pages/userInfo/userInfo"
+				}
+			]
+		}
+	}
+}
